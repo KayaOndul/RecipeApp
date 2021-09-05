@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "b6cd06cc-7964-401f-ae91-bebebfa52387",
+		"name": "Recipe App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Recipe By Title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/recipe/?title=Hot Chicken Wings",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						""
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Hot Chicken Wings"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Recipe",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"ingredients\": [\n            {\n                \"name\": \"Chicken Wings\",\n                \"amount\": 1000,\n                \"unit\": \"GRAM\"\n            },\n            {\n                \"name\": \"Hot Sauce\",\n                \"amount\": 100,\n                \"unit\": \"MILLILITER\"\n            },\n            {\n                \"name\": \"Vegetable Oil\",\n                \"amount\": 1,\n                \"unit\": \"LITER\"\n            }\n        ],\n        \"title\": \"Hot Chicken Wings\",\n        \"instructions\": \"This is an instruction\",\n        \"createdDate\": \"05-09-2021 23:13\",\n        \"for_person\": 4,\n        \"vegetarian\": \"no\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/recipe",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete A Recipe By Title",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "username",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/recipe?title=Chickpeas Mediterranean",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Chickpeas Mediterranean"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Recipes",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "username",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/recipe/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Recipe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n    {\n        \"ingredients\": [\n            {\n                \"name\": \"Chickpeas\",\n                \"amount\": 1000,\n                \"unit\": \"GRAM\"\n            },\n            {\n                \"name\": \"Vegetable Oil\",\n                \"amount\": 0.5,\n                \"unit\": \"LITER\"\n            },\n            {\n                \"name\": \"Onion\",\n                \"amount\": 500,\n                \"unit\": \"GRAM\"\n            }\n        ],\n        \"title\": \"Chickpeas Mediterranean\",\n        \"instructions\": \"This is an instruction\",\n        \"for_person\": 5,\n        \"vegetarian\": \"yes\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/recipe",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
